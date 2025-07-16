@@ -1,2 +1,111 @@
 @import "tailwindcss";
 
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#app {
+  height: 100%;
+  display: flex;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #323232;
+    color: white;
+    height: 40px;
+    padding: 0 12px;
+    -webkit-app-region: drag;
+}
+
+.topbar-center{
+    display: flex;
+    align-items: center;
+}
+
+.topbar-right{
+    display: flex;
+    gap: 8px;
+}
+
+.topbar-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.topbar-btn:hover{
+    background-color: #C2C2C2;
+}
+
+.topbar-btn.close:hover{
+    background-color: #f04747;
+}
+
+.serverlist{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #323232;
+    color: white;
+    width: fit-content;
+    padding: 4px;
+    height: 100vh;
+    gap: 0px;
+    -webkit-app-region: drag;
+    overflow: hidden;
+}
+
+.serverlist-top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.serverlist-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 4px;
+    padding-top: 10px;
+    gap: 10px;
+    flex-grow: 1;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+}
+
+.serverlist-content::-webkit-scrollbar {
+  display: none;
+}
+
+.server-btn{
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    background-color: #3C3C3C;
+    width: 60px;
+    height: 60px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 0px;
+}
+
+.server-divider {
+    width: 60%;
+    height: 2px;
+    background-color: #444;
+    margin-top: 10px;
+    border-radius: 1px;
+    flex-shrink: 0;
+}
