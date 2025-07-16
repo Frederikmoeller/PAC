@@ -109,3 +109,121 @@ html, body {
     border-radius: 1px;
     flex-shrink: 0;
 }
+
+.sidebar-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.friendlist {
+  display: flex;
+  flex-direction: column;
+  background-color: #2e2e2e;
+  width: 260px;
+  height: 100vh;
+  color: white;
+  overflow: hidden;
+}
+
+.friendlist-header {
+  padding: 10px;
+  border-bottom: 1px solid #444;
+}
+
+.friendlist-search {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  background-color: #1e1e1e;
+  color: white;
+  outline: none;
+}
+
+.friendlist-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.friendlist-content::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.friend-entry {
+  all: unset;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 8px;
+  background-color: #3c3c3c;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  text-align: left;
+  transition: background-color 0.2s ease;
+}
+
+.friend-avatar {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.friend-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+}
+
+.avatar-fallback {
+  width: 100%;
+  height: 100%;
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  user-select: none;
+}
+
+.status-indicator {
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #2e2e2e;
+  border-radius: 50%;
+}
+
+.status-indicator.online {
+  background-color: #4caf50;
+}
+.status-indicator.offline {
+  background-color: #9e9e9e;
+}
+.status-indicator.busy {
+  background-color: #f44336;
+}
+
+.friend-name {
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
