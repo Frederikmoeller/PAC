@@ -3,6 +3,7 @@
   import TopBar from "../lib/TopBar.svelte";
   import FriendList from "$lib/FriendList.svelte";
   import ChatWindow from "$lib/ChatWindow.svelte";
+  import RightSideBar from "$lib/RightSideBar.svelte";
   import { window } from "@tauri-apps/api";
   import { onMount } from 'svelte';
 
@@ -26,6 +27,7 @@
       <FriendList />
     </div>
     <ChatWindow />
+    <RightSideBar />
   </div>
 </div>
 
