@@ -5,12 +5,13 @@
     interface Friend {
         name: string;
         avatar?: string;
-        status: "online" | "offline" | "busy";
+        status: "online" | "offline" | "busy" | "away";
     }
 
     let friends: Friend[] = [];
     let loading = true;
     let error: string | null = null;
+    let searchQuery = "";
 
     function GenerateColor(name: string): string {
         let hash = 0;
@@ -24,6 +25,8 @@
     function GetInitials(name: string) {
         return name.split(" ").map(n => n[0]).join("").toUpperCase();
     }
+
+    $: filteredFriends = friends.filter(friend => friend.name.toLowerCase().includes(searchQuery.toLowerCase()));
 
     onMount(async () => {
         try {
@@ -59,13 +62,13 @@
 
 <div class="friendlist">
     <div class="friendlist-header">
-        <input type="text" class="friendlist-search" placeholder="Search or start a chat..." />
+        <input type="text" class="friendlist-search" placeholder="Search or start a chat..." bind:value={searchQuery} />
     </div>
      <div class="friendlist-content">
     {#if loading}
       <p>Loading...</p>
     {:else}
-      {#each friends as friend}
+      {#each filteredFriends as friend}
         <button class="friend-entry">
             <div class="friend-avatar">
                 {#if friend.avatar}
